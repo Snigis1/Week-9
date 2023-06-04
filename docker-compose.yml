@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db: 
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYQSL_DATABASE=week9
+  web:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./documents/zhaw/FS 2023/DevOps/Week9:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
